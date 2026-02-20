@@ -1,0 +1,26 @@
+@import "assets/scss/mixins.scss";
+@import "assets/scss/variables.scss";
+
+// components styles
+@import "components/components.styles";
+
+// screens styles
+@import "screens/product-table/product-table.styles";
+
+body * {
+  font-family: sans-serif;
+  color: $light_black;
+}
+
+input,
+select {
+  outline: none;
+}
+
+input,
+button,
+select {
+  box-shadow: $main_shadow;
+  border: none;
+  height: 25px;
+}

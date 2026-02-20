@@ -4,14 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write 'src/**/*.{ts,tsx,css,md,json,scss}'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "install-all": "npm install --prefix backend && npm install",
+    "server": "node backend/server.js",
+    "client": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.21",
+    "@tanstack/react-table": "^8.21.3",
+    "axios": "^1.13.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "sass": "^1.97.3"
@@ -28,6 +34,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.0.1",

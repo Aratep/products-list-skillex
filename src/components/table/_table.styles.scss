@@ -1,0 +1,133 @@
+.table-container {
+  position: relative;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $overlay_background;
+    z-index: 2;
+    @include flexCenter;
+    backdrop-filter: blur(1px);
+  }
+
+  table {
+    border-collapse: collapse;
+    border: none;
+    box-shadow: $main_shadow;
+
+    th,
+    td {
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid #f0f0f0;
+      text-align: center;
+    }
+
+    thead {
+      background: $light-gray;
+      color: $base_white;
+      border-radius: $main_border_radius;
+
+      tr {
+        th {
+          position: relative;
+          height: 50px;
+          color: $total_black;
+
+          svg {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 19px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: 60px;
+        color: $light_black;
+
+        &:nth-child(even) {
+          background-color: $light_blue;
+        }
+        &:nth-child(odd) {
+          background-color: rgba(0, 123, 255, 0.03);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .responsive-table {
+      thead {
+        display: block;
+        padding-top: 10px;
+
+        tr {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        th {
+          border: none;
+          padding: 5px 10px;
+          display: flex;
+          height: 60px;
+
+          &:nth-child(1) {
+            display: none;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .responsive-table {
+      tbody {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        tr {
+          margin-bottom: 5px;
+          border-radius: 8px;
+          background: #fff;
+          height: unset;
+
+          td {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 10px;
+            border: none;
+            border-bottom: 1px solid #eee;
+            height: 50px;
+            align-items: center;
+            font-size: 18px;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &::before {
+              content: attr(data-label);
+              font-weight: 600;
+              margin-right: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

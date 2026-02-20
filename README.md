@@ -7,7 +7,35 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+# For convenience of development the app uses Node.js+React.js combination
+
+### So to install dependencies you should run in root directory:
+
+```bash
+npm run install-all
+```
+### And then run the app:
+```bash
+npm run dev
+```
+It will automatically run Node.js server and React.js client.
+
+The client starts on: http://localhost:5173/ <br/>
+The server starts on: http://localhost:3001/
+
+## Other useful commands
+In case you need manually run linter:
+```bash
+npm run lint
+```
+In case you need manually run prettier:
+```bash
+npm run format
+```
+However linter and prettier work using Husky and they automatically run on - [git commit](https://git-scm.com/docs/git-commit)  
+
 ## React Compiler
+
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 

@@ -1,0 +1,15 @@
+.table-pagination {
+  padding-top: 2rem;
+  @include flexCenter;
+  gap: 15px;
+
+  .pagination-select {
+    height: 35px;
+    width: 55px;
+    border-radius: $main_border_radius;
+    padding: 0 3px;
+    border: 1px solid $light_black;
+    color: $light_black;
+    outline: none;
+  }
+}
